@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/view/widgets/item_card_news.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,38 +9,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("News")),
       body: Column(children: [ItemCardNews()]),
-    );
-  }
-}
-
-class ItemCardNews extends StatelessWidget {
-  const ItemCardNews({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8),
-      margin: EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        spacing: 10,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadiusGeometry.circular(10),
-            child: Image.network(
-              imageTest,
-              height: 200,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Text("Europe", style: Theme.of(context).textTheme.titleSmall),
-          Text(
-            "Russian warship: Moskva sinks in Black Sea",
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-        ],
-      ),
     );
   }
 }

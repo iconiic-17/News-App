@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/routes/app_routes.dart';
 import 'package:news_app/core/theme/app_theme.dart';
+import 'package:news_app/view/screens/details_screen.dart';
 import 'package:news_app/view/screens/home_screen.dart';
 
 void main() {
@@ -15,8 +16,11 @@ class NewsApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      initialRoute: AppRoutes.homeScreen,
-      routes: {AppRoutes.homeScreen: (context) => HomeScreen()},
+      initialRoute: AppRoutes.detailsScreen,
+      routes: {
+        AppRoutes.homeScreen: (context) => HomeScreen(),
+        AppRoutes.detailsScreen: (context) => DetailsScreen(),
+      },
       theme: AppTheme.lightTheme,
       themeMode: ThemeMode.light,
     );
